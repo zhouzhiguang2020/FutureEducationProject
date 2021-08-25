@@ -12,11 +12,31 @@
        android:orientation="vertical"
        android:layout_height="match_parent">
 
+
+
        <Button
            android:text="渐变文字"
            android:onClick="onGradualChangeClick"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"/>
+       <Button
+           android:text="传感器"
+           android:onClick="onSensorClick"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+       <Button
+           android:text="RxJava"
+           android:onClick="onRxJavaClick"
+           android:textAllCaps="false"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+       <Button
+           android:text="Palette"
+           android:onClick="onPaletteClick"
+           android:textAllCaps="false"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"/>
+
 
    </LinearLayout>
 

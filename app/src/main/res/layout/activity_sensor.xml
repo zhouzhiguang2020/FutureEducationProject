@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/tvSensor"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+
+    <ImageView
+        android:id="@+id/imageSensor3"
+        android:src="@mipmap/icon_background"
+        android:scaleType="fitXY"
+        android:layout_width="300dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSensor"
+        android:layout_height="0dp"/>
+    <ImageView
+        android:id="@+id/imageSensor2"
+        android:src="@mipmap/icon_word"
+        android:scaleType="fitXY"
+        android:layout_width="300dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSensor"
+        android:layout_height="0dp"/>
+    <ImageView
+        android:id="@+id/imageSensor"
+        android:scaleType="fitXY"
+        android:src="@mipmap/icon_persion"
+        android:layout_width="300dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSensor"
+        android:layout_height="0dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

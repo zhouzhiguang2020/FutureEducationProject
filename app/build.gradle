@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    //在plugins中添加 kotlin应用扩展插件
+    // 在plugins中添加 kotlin应用扩展插件
     id 'kotlin-android-extensions'
 }
 
@@ -17,6 +17,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+        packagingOptions {
+            //解决编译时com.android.builder.merge.DuplicateRelativeFileException: More than one file was found with OS independent path 'META-INF/rxjava.properties'这个错误
+            exclude 'META-INF/rxjava.properties'
+        }
     }
 
     buildTypes {
@@ -52,4 +58,42 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    // Glide:
+    implementation 'com.github.bumptech.glide:glide:4.3.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
+
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    //Retrofit Gson转换器
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    //RxJava
+    implementation "com.squareup.retrofit2:adapter-rxjava:2.5.0"
+    //Retrofit 转换器
+    implementation "com.squareup.retrofit2:converter-scalars:2.0.1"
+    //OkHttp
+    implementation "com.squareup.okhttp3:okhttp:3.12.1"
+    //OkHttp拦截器
+    implementation "com.squareup.okhttp3:logging-interceptor:3.10.0"
+
+    //RxBinDing 【防View抖动】
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+
+    //RxBinDing高版本【源码换成kotlin了,RxView变成了.class文件，导致kotlin调用不到，java可以调用到】
+    // ============= start =================
+//    implementation 'com.jakewharton.rxbinding3:rxbinding-material:3.0.0-alpha2'
+
+//    implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
+//
+//    implementation 'com.jakewharton.rxbinding4:rxbinding-core:4.0.0'
+//
+//    implementation 'com.jakewharton.rxbinding4:rxbinding-appcompat:4.0.0'
+//
+//    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    // ============= stop =================
+
+    // 调色板
+    implementation 'com.android.support:palette-v7:26.0.0-alpha1'
 }

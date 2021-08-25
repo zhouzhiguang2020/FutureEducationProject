@@ -1,8 +1,12 @@
 package com.example.testproject.activity
 
 import android.animation.ObjectAnimator
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.testproject.R
@@ -12,8 +16,10 @@ import com.example.testproject.fragment.MyFragment
 import com.example.testproject.fragment.SettingFragment
 import com.example.testproject.fragment.TestFragment
 import com.example.testproject.utils.gradual_change.GradualChangeTextView
+import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.activity_gradual_change.*
 import kotlinx.android.synthetic.main.activity_gradual_change_debug.*
+import java.util.concurrent.TimeUnit
 
 /**
  *
@@ -22,10 +28,12 @@ import kotlinx.android.synthetic.main.activity_gradual_change_debug.*
  * @Author: szj
  * @CreateDate: 8/9/21 1:02 PM
  * TODO 渐变文字页面
+ * TODO 博客地址:https://blog.csdn.net/weixin_44819566/article/details/119604710
+ * TODO gitee下载地址:
  */
 class GradualChangeActivity : AppCompatActivity() {
 
-    private val isJava = true
+    private val isJava = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,9 +52,10 @@ class GradualChangeActivity : AppCompatActivity() {
     private fun initJava() {
         setContentView(R.layout.activity_gradual_change_debug)
 
-        javaLeft.setOnClickListener { java_gradual_tv.setType(GradualChangeTextView.GRADUAL_CHANGE_LEFT)}
+        javaLeft.setOnClickListener { java_gradual_tv.setType(GradualChangeTextView.GRADUAL_CHANGE_LEFT) }
 
-        javaRight.setOnClickListener {java_gradual_tv.setType(GradualChangeTextView.GRADUAL_CHANGE_RIGHT) }
+        javaRight.setOnClickListener { java_gradual_tv.setType(GradualChangeTextView.GRADUAL_CHANGE_RIGHT) }
+
 
     }
 
@@ -67,6 +76,18 @@ class GradualChangeActivity : AppCompatActivity() {
             change_text_view.setSlidingPosition(GradualChangeTextView.GRADUAL_CHANGE_RIGHT)
             startAnimator()
         }
+
+
+        // 初始化数据
+        val list = ArrayList<View>();
+
+
+        repeat(10) {
+            val img = ImageView(this)
+            img.setBackgroundColor(Color.parseColor("#aabbcc"))
+            list.add(img)
+        }
+
 
         initViewPager()
     }
@@ -106,7 +127,7 @@ class GradualChangeActivity : AppCompatActivity() {
                 Log.i("szjViewPager", "$position positionOffset:${positionOffset}")
             }
 
-            override fun onPageSelected(position: Int) { }
+            override fun onPageSelected(position: Int) {}
 
             override fun onPageScrollStateChanged(state: Int) {
                 //当 ViewPage结束的时候,重新设置一下状态 [不设置的话会有'残影']

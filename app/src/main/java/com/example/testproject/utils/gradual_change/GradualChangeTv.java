@@ -23,7 +23,7 @@ import com.example.testproject.int_def.GradualChangeType;
 public class GradualChangeTv extends AppCompatTextView {
     public Paint mPaint = new Paint();
 
-    public final String text = "android 超级兵";
+    public final String text = "起来不愿做奴隶的人们";
 
     //用来记录当前进度 【0-1】
     float progress = 0f;
@@ -42,11 +42,17 @@ public class GradualChangeTv extends AppCompatTextView {
         //抗锯齿
         mPaint.setAntiAlias(true);
         //设置文字大小
-        mPaint.setTextSize(80);
+        mPaint.setTextSize(textSize);
     }
+
+    //文字大小
+    float textSize = 80;
 
     //默认从左到右滑动
     int type = GradualChangeTextView.GRADUAL_CHANGE_RIGHT;
+
+    //缩放比例
+    float scale = 1.2f;
 
     public void setType(@GradualChangeType int type) {
         this.type = type;
@@ -63,6 +69,9 @@ public class GradualChangeTv extends AppCompatTextView {
         //获取当前控件的宽高的一半
         int viewWidth = getWidth() / 2;
         int viewHeight = getHeight() / 2;
+
+        //设置文字大小
+        mPaint.setTextSize(textSize);
 
         //绘制底层
         drawBottom(canvas, viewWidth, viewHeight, textWidth, textHeight);
@@ -123,6 +132,16 @@ public class GradualChangeTv extends AppCompatTextView {
          */
         canvas.clipRect((int) textX, 0, (int) textX + textWidth * progress, getHeight());
 
+        mPaint.setSubpixelText(true);
+        int i = mPaint.breakText(text, false, textWidth * progress, new float[]{});
+        if (i >= text.length()) {
+            i = text.length() - 1;
+        }
+        Log.i("szj当前文字", text.charAt(i) + "");
+
+
+        canvas.scale(1, 1.5f, textX, textY);
+
         /*
          * 绘制文字
          * 参数一: 绘制文字
@@ -146,7 +165,9 @@ public class GradualChangeTv extends AppCompatTextView {
         float textY = viewHeight - textHeight / 2;
 
         //跟随者上层裁剪
-        canvas.clipRect((int) textX + textWidth * progress, 0, textWidth + viewWidth, getHeight());
+        //canvas.clipRect((int) textX + textWidth * progress, 0, textWidth + viewWidth, getHeight());
+//        canvas.scale(1f, 1.5f, textX, textX + 30);
+
         /*
          * 绘制文字
          * 参数一: 绘制文字
@@ -155,6 +176,7 @@ public class GradualChangeTv extends AppCompatTextView {
          * 参数四: 画笔
          */
         canvas.drawText(text, textX, textY, mPaint);
+
         canvas.restore();
     }
 
