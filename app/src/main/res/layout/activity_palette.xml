@@ -48,7 +48,7 @@
             android:layout_height="200dp"
             android:layout_marginBottom="10dp"
             android:scaleType="fitXY"
-            android:src="@drawable/guidao_a" />
+            android:src="@mipmap/guidao_a" />
 
         <TextView
             android:id="@+id/title_tv"

@@ -22,7 +22,6 @@ import com.example.testproject.R;
 import com.example.testproject.utils.ColorUtil;
 import com.example.testproject.utils.banner.BannerAdapter;
 import com.example.testproject.utils.banner.ScaleTransformer;
-import com.example.testproject.utils.banner.StackPageTransformer;
 import com.example.testproject.view.BannerView;
 
 import java.util.ArrayList;
@@ -36,16 +35,22 @@ import java.util.TimerTask;
  * @Author: szj
  * @CreateDate: 8/20/21 7:04 PM
  * TODO Palette 颜色吸取
- * TODO 本文Palette参考自:https://blog.csdn.net/m0_37667770/article/details/79575749
  * TODO 本文Palette参考自:https://www.jianshu.com/p/d3c13eb700a4
- * TODO 本文Banner参考自:https://blog.csdn.net/kelin410/article/details/78491639
+ * TODO gitee下载地址:https://gitee.com/lanyangyangzzz/android_ui
+ * TODO 文章地址:https://blog.csdn.net/weixin_44819566/article/details/119914339
+ *
  */
 public class PaletteActivity extends AppCompatActivity {
 
     private TextView tv, tv1, tv2, tv3, tv4, tv5, tv6, tv7;
     private ImageView imageView;
 
-    private final int[] mDrawables = new int[]{R.drawable.guidao_d, R.drawable.guidao_c, R.drawable.guidao_b, R.drawable.guidao_a,};
+    private final int[] mDrawables = new int[]{
+            R.mipmap.guidao_d,
+            R.mipmap.guidao_c,
+            R.mipmap.guidao_b,
+            R.mipmap.guidao_a,
+    };
 
     private final ArrayList<String> mNekWorkUrls = new ArrayList<String>() {{
         add("https://steamuserimages-a.akamaihd.net/ugc/931563623911695840/6D1C84C7FAAA6172FC16DF89A0DF824C6198DDE6/?imw=1024&imh=652&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true");
@@ -126,7 +131,7 @@ public class PaletteActivity extends AppCompatActivity {
         viewPager.setAdapter(new BannerAdapter(this, mDrawables));
 
         //Pager之间的间距
-        viewPager.setPageMargin(20);
+//        viewPager.setPageMargin(20);
 
         //预加载
         viewPager.setOffscreenPageLimit(5);
@@ -178,7 +183,7 @@ public class PaletteActivity extends AppCompatActivity {
 //                        ColorUtil.getInstance().setGradualChange(circleRelateLayout, color, GradientDrawable.Orientation.TL_BR, 0);
 
                         //动画设置背景颜色
-//                        ColorUtil.getInstance().setAnimatorColor(viewPagerRootView, 1000, mHotColor, hotColor);
+                        ColorUtil.getInstance().setAnimatorColor(viewPagerRootView, 1000, mHotColor, hotColor);
                         mHotColor = hotColor;
                     }
                 });

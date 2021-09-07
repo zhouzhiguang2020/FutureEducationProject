@@ -37,12 +37,7 @@ public class BannerAdapter extends PagerAdapter {
         ImageView imageView = view.findViewById(R.id.iv_icon);
         imageView.setImageResource(mData[position % mData.length]); //设置图片时 取%即可
 
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(mContext, "当前条目：" + position % mData.length, Toast.LENGTH_SHORT).show();
-            }
-        });
+        imageView.setOnClickListener(view1 -> Toast.makeText(mContext, "当前条目：" + position % mData.length, Toast.LENGTH_SHORT).show());
 
         container.addView(view);//添加到父控件
         return view;

@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.testproject.R;
+import com.example.testproject.bean.TestBean;
 import com.jakewharton.rxbinding2.view.RxView;
 import com.jakewharton.rxbinding2.widget.RxTextView;
 import com.jakewharton.rxbinding2.widget.TextViewTextChangeEvent;
@@ -24,9 +25,13 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -47,7 +52,9 @@ public class RxJavaActivity extends AppCompatActivity {
 
     private final String PATH = "https://steamuserimages-a.akamaihd.net/ugc/931563623911695840/6D1C84C7FAAA6172FC16DF89A0DF824C6198DDE6/?imw=1024&imh=652&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true";
     private ProgressDialog progressDialog;
+    private TextView tv;
 
+    private final ArrayList<TestBean> testBeanList = new ArrayList<>();
 
     @SuppressLint("CheckResult")
     @Override
@@ -56,7 +63,11 @@ public class RxJavaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_rx_java);
 
         Button bt = findViewById(R.id.bt);
+        tv = findViewById(R.id.tv);
 
+        
+
+        //防抖动点击测试
         RxView.clicks(bt).throttleFirst(1, TimeUnit.SECONDS)
                 .map(new Function<Object, String>() {
                     @Override
@@ -68,7 +79,45 @@ public class RxJavaActivity extends AppCompatActivity {
                     bt.setText(unit);
                 });
 
+        for (int i = 0; i < 30; i++) {
+            testBeanList.add(new TestBean("李元霸" + i, i * 20, i * 20 % 3 == 0));
+        }
+    }
 
+    public void onFlatMapClick(View view) {
+        Observable
+                .just(testBeanList)
+
+//                .create(new ObservableOnSubscribe<ArrayList<TestBean>>() {
+//            @Override
+//            public void subscribe(ObservableEmitter<ArrayList<TestBean>> e) throws Exception {
+//                e.onNext(testBeanList);
+//            }
+//        })
+                //给下面切换子线程
+                .observeOn(Schedulers.io())
+                .flatMap(new Function<ArrayList<TestBean>, ObservableSource<TestBean>>() {
+                    @Override
+                    public ObservableSource<TestBean> apply(ArrayList<TestBean> testBeans) throws Exception {
+
+                        return Observable.fromIterable(testBeans);
+                    }
+                })
+                .map(new Function<TestBean, String>() {
+                    @Override
+                    public String apply(TestBean testBean) throws Exception {
+                        return testBean.getName();
+                    }
+                })
+                //给下面切换主现场
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String testBean) throws Exception {
+                        Log.i("szjAccept", testBean.toString());
+                        tv.append(testBean.toString() + "\n");
+                    }
+                });
     }
 
 

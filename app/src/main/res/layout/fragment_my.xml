@@ -1,17 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:background="@color/purple_200"
-    android:layout_height="match_parent"
-    tools:context=".fragment.MyFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:gravity="center"
-        android:textSize="80dp"
+    <data class="MyFragmentDataBinDing">
+
+        <variable
+            name="data"
+            type="com.example.testproject.view_model.TestViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="我的" />
+        android:background="@color/purple_200"
+        tools:context=".fragment.MyFragment">
 
-</FrameLayout>
+        <!-- TODO: Update blank fragment layout -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@{String.valueOf(data.liveData)}"
+            android:textSize="80dp"
+            tools:layout_editor_absoluteX="-28dp"
+            tools:layout_editor_absoluteY="-41dp" />
+
+        <Button
+            android:id="@+id/btMy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="回退到Home页面"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btStartMy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="跳转到Setting页面"
+            app:layout_constraintTop_toBottomOf="@id/btMy" />
+
+        <Button
+            android:id="@+id/btMyAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加"
+            app:layout_constraintTop_toBottomOf="@id/btStartMy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

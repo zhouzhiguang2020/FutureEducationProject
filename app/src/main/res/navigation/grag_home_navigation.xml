@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/grag_home_navigation.xml"
+    app:startDestination="@id/dragHomeFragment">
+
+    <fragment
+        android:id="@+id/dragHomeFragment"
+        android:name="com.example.testproject.fragment.DragHomeFragment"
+        android:label="DragHomeFragment" >
+        <action
+            android:id="@+id/action_dragHomeFragment_to_dragDetailsFragment"
+            app:destination="@id/dragDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dragDetailsFragment"
+        android:name="com.example.testproject.fragment.DragDetailsFragment"
+        android:label="DragDetailsFragment" />
+</navigation>

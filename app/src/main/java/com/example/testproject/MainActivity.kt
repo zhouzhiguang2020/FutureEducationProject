@@ -2,18 +2,10 @@ package com.example.testproject
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.CountDownTimer
-import android.os.SystemClock
-import android.util.Log
 import android.view.View
-import android.widget.Chronometer
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.testproject.activity.GradualChangeActivity
-import com.example.testproject.activity.PaletteActivity
-import com.example.testproject.activity.RxJavaActivity
-import com.example.testproject.activity.SensorActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.testproject.activity.*
+import kotlin.concurrent.thread
 
 
 class MainActivity : AppCompatActivity() {
@@ -37,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * TODO 传感器
+     * TODO Rxjava
      */
     fun onRxJavaClick(view: View) {
         startActivity(Intent(this, RxJavaActivity::class.java))
@@ -50,7 +42,29 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, PaletteActivity::class.java))
     }
 
+    /**
+     * TODO 仿支付宝功能球拖拽
+     */
+    fun onDragClick(view: View) {
+        startActivity(Intent(this, DragHomeActivity::class.java))
+    }
 
+    /**
+     * TODO jetPack Navigation
+     */
+    fun onNavigationClick(view: View) {
+        //测试子现场是否能跳转
+        thread {
+            startActivity(Intent(this, NavigationActivity::class.java))
+        }
+    }
+
+    /**
+     * TODO jetPack Room
+     */
+    fun onRoomClick(view: View) {
+        startActivity(Intent(this, RoomActivity::class.java))
+    }
 }
 
 

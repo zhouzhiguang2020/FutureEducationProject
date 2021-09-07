@@ -22,6 +22,10 @@
         <activity android:name=".activity.SensorActivity" />
         <activity android:name=".activity.RxJavaActivity" />
         <activity android:name=".activity.PaletteActivity" />
+        <activity android:name=".activity.DragActivity" />
+        <activity android:name=".activity.DragHomeActivity" />
+        <activity android:name=".activity.NavigationActivity" />
+        <activity android:name=".activity.RoomActivity" />
     </application>
 
 </manifest>

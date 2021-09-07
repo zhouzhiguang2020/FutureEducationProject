@@ -10,8 +10,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.example.testproject.R
-import kotlinx.android.synthetic.main.activity_sensor.*
+import com.example.testproject.databinding.SensorActivityDataBinDing
 import kotlin.math.abs
 
 /**
@@ -26,10 +27,13 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
 
     private lateinit var sensorManager: SensorManager
 
+    private lateinit var dataBinDing:SensorActivityDataBinDing
+
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sensor)
+
+        dataBinDing =  DataBindingUtil.setContentView(this,R.layout.activity_sensor)
         //TODO 获取传感器的服务
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
@@ -59,11 +63,11 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
                 val z = abs(values[2]) / 180 * 30
 //                y = (y / 180) * 50
                 Log.i("szj传感器", "x:${x}\ty:${y}\tz:${z}")
-                tvSensor.text = "x:${x}\ny:${y}\nz:${z}"
+                dataBinDing.tvSensor.text = "x:${x}\ny:${y}\nz:${z}"
 
-                imageSensor.scrollTo(z.toInt(), y.toInt())
-                imageSensor2.scrollTo(z.toInt(), y.toInt())
-                imageSensor3.scrollTo(-z.toInt(), -y.toInt())
+                dataBinDing. imageSensor.scrollTo(z.toInt(), y.toInt())
+                dataBinDing. imageSensor2.scrollTo(z.toInt(), y.toInt())
+                dataBinDing. imageSensor3.scrollTo(-z.toInt(), -y.toInt())
             }
             else -> {
             }

@@ -43,22 +43,22 @@ public class ScaleTransformer implements ViewPager.PageTransformer {
          */
 
         if (position != 0) {
-            view.setScaleX(MIN_SCALE);
+//            view.setScaleX(MIN_SCALE);
             view.setScaleY(MIN_SCALE);
         } else {
-            view.setScaleX(MAX_SCALE);
+//            view.setScaleX(MAX_SCALE);
             view.setScaleY(MAX_SCALE);
         }
         if (position < 1) {
             float scaleFactor = MIN_SCALE + (1 - Math.abs(position)) * (MAX_SCALE - MIN_SCALE);
             Log.i("szjScaleFactor", scaleFactor + "\tposition:" + position);
 
-            view.setScaleX(scaleFactor);
+//            view.setScaleX(scaleFactor);
 
             view.setScaleY(scaleFactor);
 
         } else {
-            view.setScaleX(MIN_SCALE);
+//            view.setScaleX(MIN_SCALE);
             view.setScaleY(MIN_SCALE);
         }
     }
