@@ -60,7 +60,7 @@
                 android:layout_weight="1"
                 app:gradual_below_color="#000000"
                 app:gradual_text="我的"
-                app:gradual_up_color="#30EA25"
+                app:gradual_up_color="#ff0000"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.example.testproject.utils.gradual_change.GradualChangeTextView
@@ -70,7 +70,7 @@
                 android:layout_weight="1"
                 app:gradual_below_color="#000000"
                 app:gradual_text="测试"
-                app:gradual_up_color="#30EA25"
+                app:gradual_up_color="#00ff00"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.example.testproject.utils.gradual_change.GradualChangeTextView
@@ -80,7 +80,7 @@
                 android:layout_weight="1"
                 app:gradual_below_color="#000000"
                 app:gradual_text="设置"
-                app:gradual_up_color="#30EA25"
+                app:gradual_up_color="#0000ff"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </LinearLayout>
@@ -89,7 +89,6 @@
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/banner"
             app:layout_constraintTop_toBottomOf="@+id/linear" />
 
 
