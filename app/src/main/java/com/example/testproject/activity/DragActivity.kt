@@ -13,6 +13,7 @@ import com.example.testproject.databinding.DragDataBinDing
  * @Author: szj
  * @CreateDate: 8/26/21 9:59 AM
  * TODO 拖拽 详情
+ * TODO 原创地址:https://blog.csdn.net/weixin_44819566/article/details/120158278
  */
 class DragActivity : AppCompatActivity() {
 

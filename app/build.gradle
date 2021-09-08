@@ -118,7 +118,6 @@ dependencies {
     //万能适配器 BaseQuickAdapter
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 
-
     //viewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
     kapt 'androidx.room:room-compiler:2.2.5'
