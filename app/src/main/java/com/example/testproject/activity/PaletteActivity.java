@@ -38,7 +38,6 @@ import java.util.TimerTask;
  * TODO 本文Palette参考自:https://www.jianshu.com/p/d3c13eb700a4
  * TODO gitee下载地址:https://gitee.com/lanyangyangzzz/android_ui
  * TODO 文章地址:https://blog.csdn.net/weixin_44819566/article/details/119914339
- *
  */
 public class PaletteActivity extends AppCompatActivity {
 
@@ -47,9 +46,16 @@ public class PaletteActivity extends AppCompatActivity {
 
     private final int[] mDrawables = new int[]{
             R.mipmap.guidao_d,
-            R.mipmap.guidao_c,
-            R.mipmap.guidao_b,
-            R.mipmap.guidao_a,
+            R.mipmap.guidao_d,
+            R.mipmap.guidao_d,
+            R.mipmap.guidao_d,
+            R.mipmap.guidao_d,
+            R.mipmap.guidao_d,
+            R.mipmap.guidao_d,
+            R.mipmap.guidao_d,
+//            R.mipmap.guidao_c,
+//            R.mipmap.guidao_b,
+//            R.mipmap.guidao_a,
     };
 
     private final ArrayList<String> mNekWorkUrls = new ArrayList<String>() {{
@@ -122,7 +128,7 @@ public class PaletteActivity extends AppCompatActivity {
     }
 
     //用来记录是否按压,如果按压,则不滚动
-    boolean isDown ;
+    boolean isDown;
 
     private void initBannerViewPager(ViewPager viewPager, RelativeLayout viewPagerRootView) {
         Timer timer = new Timer();
@@ -131,14 +137,14 @@ public class PaletteActivity extends AppCompatActivity {
         viewPager.setAdapter(new BannerAdapter(this, mDrawables));
 
         //Pager之间的间距
-//        viewPager.setPageMargin(20);
+        viewPager.setPageMargin(20);
 
         //预加载
         viewPager.setOffscreenPageLimit(5);
 
         //设置两边小 中间大 【切记配合 xml: android:clipChildren="false" 参数使用】
         //图书
-       viewPager.setPageTransformer(true, new ScaleTransformer());
+        viewPager.setPageTransformer(true, new ScaleTransformer());
         //仿图书
 //        viewPager.setPageTransformer(true, new StackPageTransformer(viewPager));
 
@@ -146,17 +152,17 @@ public class PaletteActivity extends AppCompatActivity {
         viewPager.setCurrentItem(1);
 
         //定时器播放ViewPager
-        TimerTask timerTask = new TimerTask() {
-            @Override
-            public void run() {
-                if (!isDown) {
-                    //获取到当前的位置
-                    int page = viewPager.getCurrentItem() + 1;
-                    runOnUiThread(() -> viewPager.setCurrentItem(page));
-                }
-            }
-        };
-       timer.schedule(timerTask, 0, 2500);
+//        TimerTask timerTask = new TimerTask() {
+//            @Override
+//            public void run() {
+//                if (!isDown) {
+//                    //获取到当前的位置
+//                    int page = viewPager.getCurrentItem() + 1;
+//                    runOnUiThread(() -> viewPager.setCurrentItem(page));
+//                }
+//            }
+//        };
+//        timer.schedule(timerTask, 0, 2500);
 
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

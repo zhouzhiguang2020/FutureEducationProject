@@ -26,7 +26,7 @@ infix fun <T> T.toast(context: Context) {
 
 //TODO 利用RxView机制 防止View重复点击
 fun View.click(
-    time: Int = 1, // 时间[单位:秒(s)]
+    time: Int = 2, // 时间[单位:秒(s)]
     click: () -> Unit,
 ) {
     RxView.clicks(this).throttleFirst(time.toLong(), TimeUnit.SECONDS)

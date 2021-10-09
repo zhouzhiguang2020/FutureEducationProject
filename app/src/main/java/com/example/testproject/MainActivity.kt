@@ -60,11 +60,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * TODO jetPack Room
+     * TODO jetPack SortedActivity
      */
-    fun onRoomClick(view: View) {
-        startActivity(Intent(this, RoomActivity::class.java))
+    fun onSortedClick(view: View) {
+        startActivity(Intent(this, SortedActivity::class.java))
     }
+
 }
 
 

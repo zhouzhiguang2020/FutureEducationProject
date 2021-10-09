@@ -25,7 +25,8 @@
         <activity android:name=".activity.DragActivity" />
         <activity android:name=".activity.DragHomeActivity" />
         <activity android:name=".activity.NavigationActivity" />
-        <activity android:name=".activity.RoomActivity" />
+        <activity android:name=".activity.SortedActivity" />
+        <activity android:name=".activity.ObserveActivity" />
     </application>
 
 </manifest>

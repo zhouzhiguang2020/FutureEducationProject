@@ -13,18 +13,19 @@
         <RelativeLayout
             android:id="@+id/viewPagerRootView"
             android:layout_width="match_parent"
+            android:layout_height="1000dp"
             android:layout_marginBottom="10dp"
-            android:clipChildren="false"
-            android:layout_height="300dp">
+            android:clipChildren="false">
 
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPager"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:rotation="90" />
 
         </RelativeLayout>
 
@@ -52,7 +53,7 @@
 
         <TextView
             android:id="@+id/title_tv"
-            
+
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#5fff"
@@ -61,7 +62,7 @@
 
         <TextView
             android:id="@+id/title_tv1"
-            
+
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#5fff"
@@ -71,7 +72,7 @@
         <TextView
             android:id="@+id/title_tv2"
             android:layout_width="match_parent"
-            
+
             android:layout_height="50dp"
             android:background="#5fff"
             android:gravity="center"
@@ -79,7 +80,7 @@
 
         <TextView
             android:id="@+id/title_tv3"
-            
+
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#5fff"
@@ -88,7 +89,7 @@
 
         <TextView
             android:id="@+id/title_tv4"
-            
+
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#5fff"
@@ -98,7 +99,7 @@
         <TextView
             android:id="@+id/title_tv5"
             android:layout_width="match_parent"
-            
+
             android:layout_height="50dp"
             android:background="#5fff"
             android:gravity="center"
@@ -107,7 +108,7 @@
         <TextView
             android:id="@+id/title_tv6"
             android:layout_width="match_parent"
-            
+
             android:layout_height="50dp"
             android:background="#5fff"
             android:gravity="center"
@@ -117,13 +118,13 @@
             android:id="@+id/title_tv7"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            
+
             android:background="#5fff"
             android:gravity="center"
             android:text="" />
 
         <LinearLayout
-            
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
