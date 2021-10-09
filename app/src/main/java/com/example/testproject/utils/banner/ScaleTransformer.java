@@ -18,7 +18,7 @@ import com.example.testproject.view.BannerView;
  */
 public class ScaleTransformer implements ViewPager.PageTransformer {
     private static final float MAX_SCALE = 1.0f;//0缩放
-    private static final float MIN_SCALE = 1.0f;//0.85缩放
+    private static final float MIN_SCALE = 0.85f;//0.85缩放
 
 
     @Override
@@ -42,7 +42,7 @@ public class ScaleTransformer implements ViewPager.PageTransformer {
          *   右侧View  position > 1
          */
 
-        view.setRotation(-90);
+//        view.setRotation(-90);
 
         if (position != 0) {
             view.setScaleX(MIN_SCALE);

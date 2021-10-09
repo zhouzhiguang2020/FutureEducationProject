@@ -44,18 +44,11 @@ public class PaletteActivity extends AppCompatActivity {
     private TextView tv, tv1, tv2, tv3, tv4, tv5, tv6, tv7;
     private ImageView imageView;
 
-    private final int[] mDrawables = new int[]{
+    private final int[] mDrawables = new int[] {
             R.mipmap.guidao_d,
-            R.mipmap.guidao_d,
-            R.mipmap.guidao_d,
-            R.mipmap.guidao_d,
-            R.mipmap.guidao_d,
-            R.mipmap.guidao_d,
-            R.mipmap.guidao_d,
-            R.mipmap.guidao_d,
-//            R.mipmap.guidao_c,
-//            R.mipmap.guidao_b,
-//            R.mipmap.guidao_a,
+            R.mipmap.guidao_c,
+            R.mipmap.guidao_b,
+            R.mipmap.guidao_a,
     };
 
     private final ArrayList<String> mNekWorkUrls = new ArrayList<String>() {{

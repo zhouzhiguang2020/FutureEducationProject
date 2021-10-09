@@ -13,7 +13,7 @@
         <RelativeLayout
             android:id="@+id/viewPagerRootView"
             android:layout_width="match_parent"
-            android:layout_height="1000dp"
+            android:layout_height="200dp"
             android:layout_marginBottom="10dp"
             android:clipChildren="false">
 
@@ -24,8 +24,7 @@
                 android:layout_height="100dp"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:rotation="90" />
+                android:layout_marginBottom="10dp"/>
 
         </RelativeLayout>
 
