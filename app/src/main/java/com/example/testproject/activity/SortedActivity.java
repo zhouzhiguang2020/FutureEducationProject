@@ -1,6 +1,8 @@
 package com.example.testproject.activity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -92,4 +94,22 @@ public class SortedActivity extends AppCompatActivity {
             sortAdapter.deleteData(0);
         });
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                Log.i("szjACTION_DOWN", event.getActionIndex() + "");
+                break;
+            case MotionEvent.ACTION_POINTER_DOWN:
+                Log.i("szjACTION_POINTER_DOWN", event.getActionIndex() + "");
+                break;
+        }
+        return super.onTouchEvent(event);
+    }
+
+
+
+
+
 }

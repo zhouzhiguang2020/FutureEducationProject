@@ -60,10 +60,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * TODO jetPack SortedActivity
+     * TODO SortedActivity
      */
     fun onSortedClick(view: View) {
         startActivity(Intent(this, SortedActivity::class.java))
+    }
+
+    /*
+     * 作者:android 超级兵
+     * 创建时间: 10/11/21 5:30 PM
+     * TODO 图片缩放
+     */
+    fun onPhotoClick(view: View) {
+        startActivity(Intent(this, PhotoZoomActivity::class.java))
     }
 
 }

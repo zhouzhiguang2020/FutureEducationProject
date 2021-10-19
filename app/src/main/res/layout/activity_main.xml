@@ -7,65 +7,74 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:orientation="vertical"
-       android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-       <Button
-           android:text="渐变文字"
-           android:onClick="onGradualChangeClick"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
-       <Button
-           android:text="传感器"
-           android:onClick="onSensorClick"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
-       <Button
-           android:text="RxJava"
-           android:onClick="onRxJavaClick"
-           android:textAllCaps="false"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
-       <Button
-           android:text="Palette"
-           android:onClick="onPaletteClick"
-           android:textAllCaps="false"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onGradualChangeClick"
+            android:text="渐变文字" />
 
-       <Button
-           android:text="仿支付宝功能球拖拽"
-           android:onClick="onDragClick"
-           android:textAllCaps="false"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSensorClick"
+            android:text="传感器" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRxJavaClick"
+            android:text="RxJava"
+            android:textAllCaps="false" />
 
-       <Button
-           android:text="Navigation"
-           android:onClick="onNavigationClick"
-           android:textAllCaps="false"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onPaletteClick"
+            android:text="Palette"
+            android:textAllCaps="false" />
 
-       <Button
-           android:text="排序"
-           android:onClick="onSortedClick"
-           android:textAllCaps="false"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onDragClick"
+            android:text="仿支付宝功能球拖拽"
+            android:textAllCaps="false" />
 
 
-       <TextView
-           android:id="@+id/mainTextView"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNavigationClick"
+            android:text="Navigation"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSortedClick"
+            android:text="排序"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onPhotoClick"
+            android:text="PhotoView"
+            android:textAllCaps="false" />
+
+
+        <TextView
+            android:id="@+id/mainTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
 
-
-   </LinearLayout>
+    </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

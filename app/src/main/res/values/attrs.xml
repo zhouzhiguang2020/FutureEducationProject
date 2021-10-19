@@ -20,4 +20,11 @@
     </declare-styleable>
 
 
+<!--    PhotoView kotlin/java  版本 -->
+    <declare-styleable name="PhotoView">
+        <attr name="android:src" format="reference|color" />
+    </declare-styleable>
+
+
+
 </resources>
